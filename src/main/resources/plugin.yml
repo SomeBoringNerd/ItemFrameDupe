@@ -1,0 +1,6 @@
+name: ItemFrameDupe
+version: '${version}'
+main: xyz.someboringnerd.ItemFrameDupe
+api-version: 1.18
+authors: [ SomeBoringNerd ]
+description: Enable the Item Frame Dupe from SweetAnarchy
