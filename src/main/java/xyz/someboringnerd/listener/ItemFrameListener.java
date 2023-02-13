@@ -20,16 +20,12 @@ public class ItemFrameListener implements Listener
     @EventHandler
     public void onHit(EntityDamageByEntityEvent event)
     {
-        if(event.getEntity() instanceof ItemFrame){
-            ItemFrame frame = (ItemFrame) event.getEntity();
-
-            if(frame.getItem().getType() != Material.AIR)
+        if(event.getEntity() instanceof ItemFrame frame && frame.getItem().getType() != Material.AIR)
+        {
+            if((Math.random() * 100) <= main.getConfig().getInt("probability"))
             {
-
-                if(0 + (int)(Math.random() * ((100 - 0) + 1)) <= main.getConfig().getInt("probability")){
-                    Item item = event.getEntity().getWorld().dropItem(event.getEntity().getLocation(), frame.getItem());
-                    item.setVelocity(item.getVelocity().zero());
-                }
+                Item item = event.getEntity().getWorld().dropItem(event.getEntity().getLocation(), frame.getItem());
+                item.setVelocity(item.getVelocity().zero());
             }
         }
     }
